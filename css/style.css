@@ -1,3 +1,12 @@
+.clearfix:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+    zoom: 1
+}
+
 html, body {
     margin: 0;
     padding: 0;
@@ -53,22 +62,13 @@ body {
     height: 120px;
     margin-top: -40px;
 }
-.sevastopol {
-    background: url('../img/concerts/sevastopol.png');
-}
-.herson {
-    background: url('../img/concerts/herson.png');
-}
-.odessa {
-    background: url('../img/concerts/odessa.png');
-}
-.cherkassy {
-    background: url('../img/concerts/cherkassy.png');
-}
-.dnepropetrovsk {
-    background: url('../img/concerts/dnepropetrovsk.png');
-}
+.sevastopol { background: url('../img/concerts/sevastopol.png'); }
+.herson { background: url('../img/concerts/herson.png'); }
+.odessa { background: url('../img/concerts/odessa.png'); }
+.cherkassy { background: url('../img/concerts/cherkassy.png'); }
+.dnepropetrovsk { background: url('../img/concerts/dnepropetrovsk.png'); }
 .middle {
+    position: relative;
     width: 990px;
     margin: 20px auto 0;
 }
@@ -81,19 +81,62 @@ body {
     min-height: 200px;
     background: url('../img/concerts/frame.png');
 }
-.middle .anons-wrapper .gallery {
+
+#content {
+    padding: 42px;
+    position: relative;
+    z-index: 1;
+}
+
+#content .main {
+    position: relative;
+    top: -70px;
+}
+
+#content .main img {
+    width: 400px;
+    float: left;
+    box-shadow: 0 0 8px #777;
+}
+
+#content .main div {
+    padding-left: 445px;
+    font-family: sans-serif;
+    font-size: 18px;
+    text-align: justify;
+}
+
+#instagram {
+    margin-left: -10px;
+}
+
+#instagram .instagram-img {
+    margin-left: 10px;
+    box-shadow: 0 0 6px #777;
+}
+
+.middle .anons-footer {
     width: 100%;
     height: 135px;
     position: absolute;
     bottom: 0;
     background: url('../img/concerts/frame-footer.png') no-repeat 0 100%;
 }
+
 .footer {
     position: relative;
     height: 850px;
     margin: -350px auto 0;
     background: url('../img/footer.png');
     background-size: cover;
+}
+.footer .calendar {
+    position: absolute;
+    bottom: 100px;
+    width: 100%;
+    height: 380px;
+    background: url('../img/footer-calendar.png') 50% no-repeat;
+    z-index: 1;
 }
 .footer .footer-hover {
     position: absolute;
