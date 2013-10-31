@@ -1,0 +1,121 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    min-width: 960px;
+    background-color: #99ccff;
+}
+.header {
+    min-height: 615px;
+    margin: 0 auto;
+    background: url('../img/header.png');
+    background-size: cover;
+}
+.header .logo {
+    position: relative;
+    height: 300px;
+    background: url('../img/logo.png')no-repeat 50% 30px;
+}
+.header .logo .social {
+    position: absolute;
+    right: 0px;
+    top: 15px;
+    width: 265px;
+    height: 250px;
+    background: url('../img/united.png') no-repeat 100% 0;
+}
+.header .logo .social .icons {
+    margin: 214px 0 0 56px;
+}
+.header .logo .social .icons a {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+}
+.header .logo .social .icons a.facebook{
+    background: url('../img/social-icons.png') no-repeat 0 0;
+}
+.header .logo .social .icons a.twitter{
+    background: url('../img/social-icons.png') no-repeat -44px 0;
+}
+.header .logo .social .icons a.kontakt{
+    background: url('../img/social-icons.png') no-repeat -88px 0;
+}
+.header .logo .social .icons a.last-icon{
+    background: url('../img/social-icons.png') no-repeat -133px 0;
+}
+.header .concert-list {
+    width: 980px;
+    margin: 0 auto;
+}
+.header .concert-list .concert {
+    height: 120px;
+    margin-top: -40px;
+}
+.sevastopol {
+    background: url('../img/concerts/sevastopol.png');
+}
+.herson {
+    background: url('../img/concerts/herson.png');
+}
+.odessa {
+    background: url('../img/concerts/odessa.png');
+}
+.cherkassy {
+    background: url('../img/concerts/cherkassy.png');
+}
+.dnepropetrovsk {
+    background: url('../img/concerts/dnepropetrovsk.png');
+}
+.middle {
+    width: 990px;
+    margin: 20px auto 0;
+}
+.middle .anons-header {
+    height: 250px;
+    background: url('../img/concerts/anons-header.png');
+}
+.middle .anons-wrapper {
+    position: relative;
+    min-height: 200px;
+    background: url('../img/concerts/frame.png');
+}
+.middle .anons-wrapper .gallery {
+    width: 100%;
+    height: 135px;
+    position: absolute;
+    bottom: 0;
+    background: url('../img/concerts/frame-footer.png') no-repeat 0 100%;
+}
+.footer {
+    position: relative;
+    height: 850px;
+    margin: -350px auto 0;
+    background: url('../img/footer.png');
+    background-size: cover;
+}
+.footer .footer-hover {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 175px;
+    background: url('../img/footer-hover.png');
+    background-size: cover;
+}
+.footer .organisation {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    width: 270px;
+    height: 80px;
+    background: url('../img/organisation.png');
+}
+.footer .contacts {
+    position: absolute;
+    bottom: 27px;
+    right: 50px;
+    width: 300px;
+    height: 120px;
+    background: url('../img/contacts.png');
+}
