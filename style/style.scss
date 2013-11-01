@@ -103,6 +103,7 @@ section.middle {
             height: 80px;
             cursor: pointer;
             background-repeat: no-repeat;
+            &.luhansk { background-image: url($img + 'list/luhansk.png'); }
             &.dnepropetrovsk { background-image: url($img + 'list/dnepropetrovsk.png'); }
             &.cherkassy { background-image: url($img + 'list/cherkassy.png'); }
             &.odessa { background-image: url($img + 'list/odessa.png'); }
