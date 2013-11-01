@@ -6,13 +6,13 @@ jQuery ->
 	setInterval updateInstagram, 5 * 60 * 1000
 	updateInstagram()
 	
-	$('header .logo, section.middle .frame').click ->
-		updateInstagram this
+	$('header .logo').click ->
+		updateInstagram()
 
 	$('#concert-list').find('.concert').click (e) ->
 		selectCity e
 
-updateInstagram = (el) ->
+updateInstagram = ->
 	$.get 'php/instagram.php', (data) ->
 		if data && data.channel && data.channel.item
 			items = data.channel.item
@@ -43,7 +43,7 @@ printImgs = (imgs, city, cityTitle) ->
 
 	# $('section.middle .frame').css
 	# 	'backgroundImage': "url('img/frame/" + city + ".png'), url('img/frame/footer.png')"
-	$('#title').text(cityTitle || '');
+	$('#title').text(cityTitle);
 	$(document).scrollTop 400
 
 selectCity = (e) ->
