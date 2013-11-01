@@ -1,167 +1,151 @@
+$img: '../img/';
+
 .clearfix:after {
     content: ".";
     display: block;
     height: 0;
     clear: both;
     visibility: hidden;
-    zoom: 1
+    zoom: 1;
 }
 
-html, body {
-    margin: 0;
-    padding: 0;
-}
-
+html { margin: 0; padding: 0; }
 body {
+    @extend html;
     min-width: 960px;
-    background-color: #99ccff;
+    background: url($img + 'header/header.png') top, url($img + 'footer/footer.png') bottom;
+    background: {
+        color: #99ccff;
+        repeat: no-repeat;
+        size: 100%;
+    }
 }
 
-.header {
+header {
     min-height: 615px;
     margin: 0 auto;
-    background: url('../img/header.png');
-    background-size: cover;
-}
-.header .logo {
-    position: relative;
-    height: 300px;
-    background: url('../img/logo.png')no-repeat 50% 30px;
-}
-.header .logo .social {
-    position: absolute;
-    right: 0px;
-    top: 15px;
-    width: 265px;
-    height: 250px;
-    background: url('../img/united.png') no-repeat 100% 0;
-}
-.header .logo .social .icons {
-    margin: 214px 0 0 56px;
-}
-.header .logo .social .icons a {
-    display: inline-block;
-    width: 44px;
-    height: 44px;
-}
-.header .logo .social .icons a.facebook{
-    background: url('../img/social-icons.png') no-repeat 0 0;
-}
-.header .logo .social .icons a.twitter{
-    background: url('../img/social-icons.png') no-repeat -44px 0;
-}
-.header .logo .social .icons a.kontakt{
-    background: url('../img/social-icons.png') no-repeat -88px 0;
-}
-.header .logo .social .icons a.last-icon{
-    background: url('../img/social-icons.png') no-repeat -133px 0;
-}
-.header .concert-list {
-    width: 980px;
-    margin: 0 auto;
-}
-.header .concert-list .concert {
-    height: 120px;
-    margin-top: -40px;
-}
-.sevastopol { background: url('../img/concerts/sevastopol.png'); }
-.herson { background: url('../img/concerts/herson.png'); }
-.odessa { background: url('../img/concerts/odessa.png'); }
-.cherkassy { background: url('../img/concerts/cherkassy.png'); }
-.dnepropetrovsk { background: url('../img/concerts/dnepropetrovsk.png'); }
-.anons {
-    position: relative;
-    width: 990px;
-    margin: 20px auto 0;
-}
-.middle .header {
-    height: 250px;
-    background: url('../img/concerts/anons-header.png');
-}
-.middle .wrapper {
-    position: relative;
-    min-height: 200px;
-    background: url('../img/concerts/frame.png');
+    .logo {
+        height: 240px;
+        position: relative;
+        top: 30px;
+        background: url($img + 'header/logo.png') no-repeat 50%;
+        cursor: pointer;
+    }
+    .social {
+        box-sizing: border-box;
+        padding: 214px 0 0 56px;
+        width: 265px;
+        height: 250px;
+        position: absolute;
+        right: 0px;
+        top: 15px;
+        background: url($img + 'header/united.png') no-repeat 100% 0;
+        a {
+            display: inline-block;
+            width: 44px;
+            height: 44px;
+            background: url($img + 'header/social-icons.png') no-repeat;
+            &.facebook { background-position: 0 0; }
+            &.twitter { background-position: -44px 0; }
+            &.vkontakte { background-position: -88px 0; }
+            &.instagram { background-position: -133px 0; }
+        }
+    }
 }
 
-#content {
-    padding: 42px;
-    position: relative;
-    z-index: 2;
-}
-
-#content .main {
-    position: relative;
-    top: -70px;
-}
-
-#content .main img {
-    width: 400px;
-    float: left;
-    box-shadow: 0 0 8px #777;
-}
-
-#content .main div {
-    padding-left: 445px;
-    font-family: sans-serif;
-    font-size: 18px;
-    text-align: justify;
-}
-
-#instagram {
-    margin-left: -10px;
-}
-
-#instagram .instagram-img {
-    margin-left: 10px;
-    box-shadow: 0 0 6px #777;
-}
-
-.middle .footer {
-    width: 100%;
-    height: 135px;
-    position: absolute;
-    bottom: 0;
-    background: url('../img/concerts/frame-footer.png') no-repeat 0 100%;
-    z-index: 1;
+section.middle {
+    margin-top: -290px;
+    .frame {
+        margin: 0 auto;
+        padding: {
+            top: 250px;
+            bottom: 102px;
+        }
+        width: 990px;
+        position: relative;
+        background-image: url($img + 'frame/donetsk.png'), url($img + 'frame/footer.png');
+        background: {
+            position: top, bottom;
+            size: 100%;
+            repeat: no-repeat;
+        }
+        .middle {
+            padding: 0 70px;
+            background: url($img + 'frame/middle.png') repeat 100%;
+            .content {
+                position: relative;
+                #title {
+                    padding-bottom: 10px;
+                    text-align: center;
+                    font: {
+                        size: 25px;
+                        weight: bold;
+                    }
+                    color: #E30;
+                }
+                #instagram {
+                    .instagram-img {
+                        box-sizing: border-box;
+                        margin: 15px;
+                        margin-bottom: 10px;
+                        border: 5px solid white;
+                        box-shadow: 0 0 4px #444;
+                    }
+                }
+            }
+        }
+    }
+    #concert-list {
+        width: 980px;
+        margin: 0 auto;
+        .concert {
+            display: block;
+            height: 80px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+            &.dnepropetrovsk { background-image: url($img + 'list/dnepropetrovsk.png'); }
+            &.cherkassy { background-image: url($img + 'list/cherkassy.png'); }
+            &.odessa { background-image: url($img + 'list/odessa.png'); }
+            &.herson { background-image: url($img + 'list/herson.png'); }
+            &.sevastopol { background-image: url($img + 'list/sevastopol.png'); }
+        }
+    }
 }
 
 footer {
+    height: 460px;
     position: relative;
-    height: 850px;
-    margin: -400px auto 0;
-    background: url('../img/footer.png');
-    background-size: cover;
-}
-footer .calendar {
-    position: absolute;
-    bottom: 100px;
-    width: 100%;
-    height: 380px;
-    background: url('../img/footer-calendar.png') 50% no-repeat;
-    z-index: 1;
-}
-footer .footer-hover {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 175px;
-    background: url('../img/footer-hover.png');
-    background-size: cover;
-}
-footer .organisation {
-    position: absolute;
-    bottom: 50px;
-    left: 50px;
-    width: 270px;
-    height: 80px;
-    background: url('../img/organisation.png');
-}
-footer .contacts {
-    position: absolute;
-    bottom: 27px;
-    right: 50px;
-    width: 300px;
-    height: 120px;
-    background: url('../img/contacts.png');
+    .calendar {
+        margin: 0 auto;
+        width: 765px;
+        height: 380px;
+        position: relative;
+        top: -10px;
+        background: url($img + 'footer/calendar.png') 50% no-repeat;
+        z-index: 1;
+    }
+    .hover {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 175px;
+        background: url($img + 'footer/hover.png');
+        background-size: cover;
+    }
+    .organisation {
+        position: absolute;
+        bottom: 50px;
+        left: 50px;
+        width: 270px;
+        height: 80px;
+        background: url($img + 'footer/organisation.png');
+    }
+    .contacts {
+        position: absolute;
+        bottom: 27px;
+        right: 50px;
+        width: 300px;
+        height: 120px;
+        background: url($img + 'footer/contacts.png');
+    }
 }
