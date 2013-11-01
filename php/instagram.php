@@ -6,7 +6,7 @@ header('Content-Type:application/json');
 echo getJsonInstagram();
 
 function getJsonInstagram() {
-	$url = 'http://instagram.com/tags/myed1ny/feed/recent.rss';
+	$url = 'http://instagram.com/tags/мыедины/feed/recent.rss';
 	return xmlToJson($url);
 }
 
