@@ -1,0 +1,35 @@
+Needed frame headers:
+	sevastopol
+	odessa
+	herson
+	dnepropetrovsk
+	cherkassy
+
+Needed list:
+	donetsk
+	harkov
+	kirovograd
+	kiev
+
+Needed Photos:
+	sevastopol
+	luhansk
+	donetsk
+	
+	_:
+		harkov
+		kirovograd
+		kiev
+
+
+All citys:
+	sevastopol
+	odessa
+	luhansk
+	herson
+	dnepropetrovsk
+	cherkassy
+	donetsk
+	harkov
+	kirovograd
+	kiev

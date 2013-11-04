@@ -63,7 +63,7 @@ section.middle {
         }
         width: 990px;
         position: relative;
-        background-image: url($img + 'frame/donetsk.png'), url($img + 'frame/footer.png');
+        background-image: url($img + 'frame/harkov.png'), url($img + 'frame/footer.png');
         background: {
             position: top, bottom;
             size: 100%;
@@ -112,6 +112,7 @@ section.middle {
             height: 80px;
             cursor: pointer;
             background-repeat: no-repeat;
+            &.donetsk { background-image: url($img + 'list/donetsk.png'); }
             &.dnepropetrovsk { background-image: url($img + 'list/dnepropetrovsk.png'); }
             &.cherkassy { background-image: url($img + 'list/cherkassy.png'); }
             &.odessa { background-image: url($img + 'list/odessa.png'); }
