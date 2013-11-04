@@ -69,6 +69,16 @@ section.middle {
             size: 100%;
             repeat: no-repeat;
         }
+        &.seminar {
+            background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
+            margin-bottom: -170px;
+            p {
+                margin: 0;
+                padding: 10px 30px 0 30px;
+                text-align: justify;
+                text-indent: 40px;
+            }
+        }
         .middle {
             padding: 0 70px;
             background: url($img + 'frame/middle.png') repeat 100%;
@@ -93,15 +103,6 @@ section.middle {
                     }
                 }
             }
-        }
-    }
-    .frame.seminar {
-        background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
-        margin-bottom: -170px;
-        p{
-          margin: 0;
-          padding: 10px 30px 0 30px;
-          text-align: justify;
         }
     }
     #past-list {
