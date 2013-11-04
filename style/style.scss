@@ -69,6 +69,9 @@ section.middle {
             size: 100%;
             repeat: no-repeat;
         }
+        &.header-empty {
+            padding-top: 102px;
+        }
         &.seminar {
             background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
             margin-bottom: -170px;

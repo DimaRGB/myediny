@@ -32,9 +32,11 @@ updateInstagram = ->
 			$el = $ 'header .logo'
 			city = $el.data('city')
 			cityTitle = $el.data 'cityTitle'
-			printImgs imgs, city, cityTitle
+			frameHeader = $el.data 'frameHeader'
+			printImgs imgs, city, cityTitle, frameHeader
 
-printImgs = (imgs, city, cityTitle) ->
+printImgs = (imgs, city, cityTitle, frameHeader) ->
+	console.log frameHeader
 	console.log imgs
 	$instagram = $ '#instagram'
 	$instagram.empty()
@@ -49,17 +51,25 @@ printImgs = (imgs, city, cityTitle) ->
 	# $('section.middle .frame').css
 	# 	'backgroundImage': "url('img/frame/" + city + ".png'), url('img/frame/footer.png')"
 	$('#title').text(cityTitle);
+	$frame = $ 'section.middle .frame' 
+	$frame.css 'background-image', "url('../img/frame/" + frameHeader + ".png'), url('../img/frame/footer.png')"
+	if frameHeader == 'header'
+		$frame.addClass 'header-empty'
+	else
+		$frame.removeClass 'header-empty'
 	$(document).scrollTop 400
 
 selectCity = (e) ->
 	$el = $ e.target
 	city = $el.data 'city'
 	cityTitle = $el.data 'cityTitle'
+	frameHeader = $el.data 'frameHeader'
 	if !city
 		return
+
 	path = 'img/city/' + city + '/'
 
 	imgs = []
 	imgs.push(path + i + '.jpg') for i in [0..7]
 	
-	printImgs imgs, city, cityTitle
+	printImgs imgs, city, cityTitle, frameHeader
