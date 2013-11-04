@@ -24,11 +24,11 @@ Needed Photos:
 
 All citys:
 	sevastopol
-	odessa
-	luhansk
 	herson
-	dnepropetrovsk
+	odessa
 	cherkassy
+	dnepropetrovsk
+	luhansk
 	donetsk
 	harkov
 	kirovograd

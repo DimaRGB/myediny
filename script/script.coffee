@@ -3,14 +3,19 @@ rows = 2
 fadeIn = 1000
 
 jQuery ->
+	loadPastList()
+
 	setInterval updateInstagram, 5 * 60 * 1000
 	updateInstagram()
 	
 	$('header .logo').click ->
 		updateInstagram()
 
-	$('#concert-list').find('.concert').click (e) ->
+	$('#past-list').find('.concert').click (e) ->
 		selectCity e
+
+loadPastList = ->
+	# $('#past-list').
 
 updateInstagram = ->
 	$.get 'php/instagram.php', (data) ->

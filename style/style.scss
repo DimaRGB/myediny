@@ -104,7 +104,7 @@ section.middle {
           text-align: justify;
         }
     }
-    #concert-list {
+    #past-list {
         width: 980px;
         margin: 0 auto;
         .concert {
@@ -112,6 +112,7 @@ section.middle {
             height: 80px;
             cursor: pointer;
             background-repeat: no-repeat;
+            &.luhansk { background-image: url($img + 'list/luhansk.png'); }
             &.donetsk { background-image: url($img + 'list/donetsk.png'); }
             &.dnepropetrovsk { background-image: url($img + 'list/dnepropetrovsk.png'); }
             &.cherkassy { background-image: url($img + 'list/cherkassy.png'); }
