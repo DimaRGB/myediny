@@ -165,13 +165,13 @@ footer {
     }
     .contacts {
         position: absolute;
-        bottom: 27px;
+        bottom: 25px;
         right: 25px;
-        width: 300px;
-        height: 120px;
+        &.one {
+            bottom: 50px;
+        }
         .contact {
             display: block;
-            margin-top: 30px;
             color: #ffffff;
             font: {
                 size: 22px;
