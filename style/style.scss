@@ -95,6 +95,15 @@ section.middle {
             }
         }
     }
+    .frame.seminar {
+        background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
+        margin-bottom: -170px;
+        p{
+          margin: 0;
+          padding: 10px 30px 0 30px;
+          text-align: justify;
+        }
+    }
     #concert-list {
         width: 980px;
         margin: 0 auto;
@@ -103,7 +112,6 @@ section.middle {
             height: 80px;
             cursor: pointer;
             background-repeat: no-repeat;
-            &.luhansk { background-image: url($img + 'list/luhansk.png'); }
             &.dnepropetrovsk { background-image: url($img + 'list/dnepropetrovsk.png'); }
             &.cherkassy { background-image: url($img + 'list/cherkassy.png'); }
             &.odessa { background-image: url($img + 'list/odessa.png'); }
@@ -124,6 +132,13 @@ footer {
         top: -10px;
         background: url($img + 'footer/calendar.png') 50% no-repeat;
         z-index: 1;
+        a {
+          display: block;
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          height: 168px;
+        }
     }
     .hover {
         position: absolute;
@@ -144,9 +159,20 @@ footer {
     .contacts {
         position: absolute;
         bottom: 27px;
-        right: 50px;
+        right: 25px;
         width: 300px;
         height: 120px;
-        background: url($img + 'footer/contacts.png');
+        background: url($img + 'footer/contacts.png') no-repeat 0 0;
+        span {
+          display: block;
+          margin: 24px 0 0 51px;
+          color: #ffffff;
+          font-size: 22px;
+          font-weight: bold;
+          a{
+            color: #ffffff;
+            text-decoration: none;
+          }
+        }
     }
 }
