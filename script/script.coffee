@@ -8,7 +8,7 @@
 	cols = 4
 	rows = 2
 	fadeIn = 1000
-	updateInterval = 1 * 60 * 1000
+	updateInterval = 2 * 60 * 1000
 	imgPath = '../img/'
 
 	loadPastList = ->

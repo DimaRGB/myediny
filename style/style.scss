@@ -110,9 +110,10 @@ section.middle {
         }
     }
     #past-list {
-        margin: 0 auto;
-        width: 980px;
         list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        width: 980px;
         .concert {
             display: block;
             height: 80px;
