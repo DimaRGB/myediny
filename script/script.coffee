@@ -1,8 +1,8 @@
 ( ($) ->
 	$ ->
-		$('#logo').on 'click', updateInstagram
-		updateInstagram()
 		loadPastList()
+		updateInstagram()
+		$('#logo').on 'click', updateInstagram
 		setInterval updateInstagram, updateInterval
 
 	cols = 4

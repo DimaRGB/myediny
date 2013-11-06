@@ -5,20 +5,11 @@ Needed frame headers:
 	dnepropetrovsk
 	cherkassy
 
-Needed list:
+Needed Photos:
+	luhansk
 	harkov
 	kirovograd
 	kiev
-
-Needed Photos:
-	sevastopol
-	luhansk
-	donetsk
-	
-	_:
-		harkov
-		kirovograd
-		kiev
 
 
 All citys:
