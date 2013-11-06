@@ -6,7 +6,6 @@ Needed frame headers:
 	cherkassy
 
 Needed list:
-	donetsk
 	harkov
 	kirovograd
 	kiev

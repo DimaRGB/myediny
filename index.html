@@ -8,12 +8,13 @@
     <link rel='shortcut icon' href='http://myediny.com/favicon.ico' type='image/x-icon' />
     <link href='style/style.css' rel='stylesheet' type='text/css' />
     <script src='script/jquery-1.10.2.min.js' type='text/javascript'></script>
-    <script src='script/script.js' type='text/javascript'></script>
+    <script src='script/compiled/plugins.js' type='text/javascript'></script>
+    <script src='script/compiled/script.js' type='text/javascript'></script>
 </head>
 
 <body>
     <header>
-        <div class='logo' data-city='harkov' data-city-title='' data-frame-header='harkov'></div>
+        <div id='logo' data-city='kirovograd' data-city-title='Кировоград'></div>
         <div class='social'>
             <a href='https://www.facebook.com/myed1ny' class='facebook' target='_blank'></a>
             <a href='https://twitter.com/myed1ny' class='twitter' target='_blank'></a>
@@ -26,20 +27,21 @@
             <div class='middle'>
                 <article class='content'>
                     <div id='title'></div>
-                    <div id='instagram'></div>
+                    <div id='imgs'></div>
                     <!-- <iframe src="https://docs.google.com/forms/d/1iplTmxUUjJdA5h4PQHtHWSyoBu4nS1W8DdB7WvmuIoc/viewform?embedded=true" width="760" height="500" frameborder="0" marginheight="0" marginwidth="0">Завантаження...</iframe> -->
                 </article>
             </div>
         </div>
-        <div id='past-list'>
-            <a class='concert donetsk' data-frame-header='donetsk'></a>
-            <a class='concert luhansk' data-frame-header='luhansk'></a>
-            <a class='concert dnepropetrovsk' data-city='dnepropetrovsk' data-city-title='Днепропетровск' data-frame-header='header'></a>
-            <a class='concert cherkassy' data-city='cherkassy' data-city-title='Черкассы' data-frame-header='header'></a>
-            <a class='concert odessa' data-city='odessa' data-city-title='Одесса' data-frame-header='header'></a>
-            <a class='concert herson' data-city='herson' data-city-title='Херсон' data-frame-header='header'></a>
-            <a class='concert sevastopol' data-frame-header='header'></a>
-        </div>
+        <ul id='past-list'>
+            <li class='concert' data-city='harkov' data-city-title='Харьков'></li>
+            <li class='concert' data-city='donetsk' data-city-title='Донецк'></li>
+            <li class='concert' data-city='luhansk' data-city-title='Луганск'></li>
+            <li class='concert' data-city='dnepropetrovsk' data-city-title='Днепропетровск'></li>
+            <li class='concert' data-city='cherkassy' data-city-title='Черкассы'></li>
+            <li class='concert' data-city='odessa' data-city-title='Одесса'></li>
+            <li class='concert' data-city='herson' data-city-title='Херсон'></li>
+            <li class='concert' data-city='sevastopol' data-city-title='Севастополь'></li>
+        </ul>
     </section>
     <footer>
         <div class='calendar'>

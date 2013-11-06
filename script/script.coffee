@@ -1,75 +1,65 @@
-number = 8
-rows = 2
-fadeIn = 1000
-
-jQuery ->
-	loadPastList()
-
-	setInterval updateInstagram, 5 * 60 * 1000
-	updateInstagram()
-	
-	$('header .logo').click ->
+( ($) ->
+	$ ->
+		$('#logo').on 'click', updateInstagram
 		updateInstagram()
+		loadPastList()
+		setInterval updateInstagram, updateInterval
 
-	$('#past-list').find('.concert').click (e) ->
-		selectCity e
+	cols = 4
+	rows = 2
+	fadeIn = 1000
+	updateInterval = 1 * 60 * 1000
+	imgPath = '../img/'
 
-loadPastList = ->
-	# $('#past-list').
+	loadPastList = ->
+		$('#past-list').find('.concert').each ->
+			city = $(this).data('city')
+			$(this).css 'background-image', 'url(' + imgPath + 'list/' + city + '.png)'
+			$(this).on 'click', selectCity
 
-updateInstagram = ->
-	$.get 'php/instagram.php', (data) ->
-		if data && data.channel && data.channel.item
-			items = data.channel.item
-			n = if number <= items.length then number else items.length
-			i = -1
-			imgs = []
-			while( --n >= 0 && ++i < items.length )
-				link = items[i].link
-				if( link )
-					imgs.push link
+	setCity = (imgs, $city) ->
+		city = $city.data 'city'
+		headerPath = imgPath + 'frame/' + city + '.png'
+		headerExists = headerPath.fileExists()
+		headerPath = headerPath.replace(city, 'header') if !headerExists
+		cityTitle = if headerExists then '' else $city.data 'cityTitle'
 
-			$el = $ 'header .logo'
-			city = $el.data('city')
-			cityTitle = $el.data 'cityTitle'
-			frameHeader = $el.data 'frameHeader'
-			printImgs imgs, city, cityTitle, frameHeader
+		$frame = $ 'section.middle .frame'
+		$frame.css 'background-image', "url('" + headerPath + "'), url('" + imgPath + "frame/footer.png')"
+		$frame.toggleClass 'header-empty', !headerExists
+		$frame.find('#title').text(cityTitle);
+		$frame.show()
 
-printImgs = (imgs, city, cityTitle, frameHeader) ->
-	console.log frameHeader
-	console.log imgs
-	$instagram = $ '#instagram'
-	$instagram.empty()
+		imgs = imgs.shuffle().slice(0, cols * rows)
+		$imgs = $frame.find '#imgs'
+		$imgs.empty()
+		imgWidth = $imgs.width() / cols - 30
+		for img in imgs
+			$img = $ '<img src="' + img + '" />'
+			$img.addClass 'img'
+			$img.outerWidth imgWidth
+			$imgs.append $img
 
-	imgWidth = rows * ($instagram.width() / imgs.length) - 30
-	for img in imgs
-		$img = $ '<img src="' + img + '" />'
-		$img.addClass 'instagram-img'
-		$img.outerWidth imgWidth
-		$instagram.append $img
+		$(document).scrollTop $frame.position().top - 8
 
-	# $('section.middle .frame').css
-	# 	'backgroundImage': "url('img/frame/" + city + ".png'), url('img/frame/footer.png')"
-	$('#title').text(cityTitle);
-	$frame = $ 'section.middle .frame' 
-	$frame.css 'background-image', "url('../img/frame/" + frameHeader + ".png'), url('../img/frame/footer.png')"
-	if frameHeader == 'header'
-		$frame.addClass 'header-empty'
-	else
-		$frame.removeClass 'header-empty'
-	$(document).scrollTop 400
+	updateInstagram = () ->
+		$.get 'php/instagram.php', (data) ->
+			if data && data.channel && data.channel.item
+				items = data.channel.item
+				imgs = []
+				for item in items
+					if item.link
+						imgs.push item.link
+				setCity imgs, $('#logo')
 
-selectCity = (e) ->
-	$el = $ e.target
-	city = $el.data 'city'
-	cityTitle = $el.data 'cityTitle'
-	frameHeader = $el.data 'frameHeader'
-	if !city
-		return
+	selectCity = (e) ->
+		$city = $ e.target
+		city = $city.data 'city'
+		path = imgPath + 'city/' + city + '/'
+		if !(path + '0.jpg').fileExists()
+			return
+		imgs = []
+		imgs.push(path + i + '.jpg') for i in [0..7]
+		setCity imgs, $city
 
-	path = 'img/city/' + city + '/'
-
-	imgs = []
-	imgs.push(path + i + '.jpg') for i in [0..7]
-	
-	printImgs imgs, city, cityTitle, frameHeader
+) jQuery
