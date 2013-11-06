@@ -1,3 +1,5 @@
 style/*.css
 script/compiled/*.js
 .DS_Store
+
+!style/magnific-popup.css

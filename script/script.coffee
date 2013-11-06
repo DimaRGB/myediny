@@ -29,20 +29,36 @@
 		$frame.toggleClass 'header-empty', !headerExists
 		$frame.find('#title').text(cityTitle);
 		$frame.show()
+		$(document).scrollTop $frame.position().top - 8
+		setupImgs imgs
 
+	setupImgs = (imgs) ->
 		imgs = imgs.shuffle().slice(0, cols * rows)
-		$imgs = $frame.find '#imgs'
+		$imgs = $ '#imgs'
 		$imgs.empty()
 		imgWidth = $imgs.width() / cols - 30
+		isInstagram = imgs[0].indexOf('http') == 0
+		
 		for img in imgs
-			$img = $ '<img src="' + img + '" />'
-			$img.addClass 'img'
-			$img.outerWidth imgWidth
+			bigImg = if isInstagram then img else img.replace('.jpg', '_big.jpg')
+			$img = $ '<a href="' + bigImg + '"><img src="' + img + '" /></a>'
+			$img.find('img').addClass 'img'
+			$img.find('img').outerWidth imgWidth
 			$imgs.append $img
 
-		$(document).scrollTop $frame.position().top - 8
+		$imgs.magnificPopup
+			delegate: 'a'
+			type: 'image'
+			tLoading: 'Loading image #%curr%...'
+			mainClass: 'mfp-img-mobile'
+			gallery:
+				enabled: true
+				navigateByImgClick: true
+				preload: [0, 1]
+			image:
+				tError: '<a href="%url%">The image #%curr%</a> could not be loaded.'
 
-	updateInstagram = () ->
+	updateInstagram = ->
 		$.get 'php/instagram.php', (data) ->
 			if data && data.channel && data.channel.item
 				items = data.channel.item
