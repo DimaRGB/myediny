@@ -1,5 +1,7 @@
 $img: '../img/';
 
+ul { list-style-type: none; }
+
 .clearfix:after {
     content: ".";
     display: block;
@@ -56,6 +58,10 @@ header {
 
 section.middle {
     margin-top: -290px;
+    #menu {
+        position: absolute;
+        right: 0;
+    }
     .frame {
         display: none;
         margin: 0 auto;

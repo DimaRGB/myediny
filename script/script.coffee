@@ -1,4 +1,4 @@
-( ($) ->
+(($) ->
 	$ ->
 		loadPastList()
 		updateInstagram()

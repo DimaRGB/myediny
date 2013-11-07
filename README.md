@@ -21,6 +21,7 @@ setup coffeescript build:
 		,   "watchOnModified": 0.5
 		,   "compileOnSave": true
 		,   "showOutputOnSave": false
-		,   "compileDir": false
+		,   "compileDir": "compiled"
 		,   "compilePaths": false
 		}
+
