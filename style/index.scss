@@ -47,18 +47,12 @@ section.middle {
 }
 
 footer .calendar {
+    display: block;
     margin: 0 auto;
     width: 765px;
-    height: 380px;
+    height: 168px;
     position: relative;
-    top: -10px;
+    top: 20px;
     background: url($img + 'footer/calendar.png') 50% no-repeat;
     z-index: 1;
-    a {
-      display: block;
-      position: absolute;
-      bottom: 0;
-      width: 100%;
-      height: 169px;
-    }
 }
