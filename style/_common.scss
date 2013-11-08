@@ -55,7 +55,10 @@ header {
 }
 
 section.middle {
-  margin-top: -290px;
+  margin: {
+    top: -290px;
+    bottom: -170px;
+  }
   .frame {
   	margin: 0 auto;
     padding: {

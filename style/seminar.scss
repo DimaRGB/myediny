@@ -9,7 +9,6 @@ section.middle {
   }
   .frame {
     display: block;
-    margin-bottom: -170px;
     background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
     .middle {
     	article.content {
@@ -22,8 +21,10 @@ section.middle {
 		    	}
     		}
 	    	&#form {
+          text-align: center;
 	    		iframe {
-	    			width: 100%;
+	    			width: 611px;
+            height: 1010px;
 	    		}
 	    	}
     	}
