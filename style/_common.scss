@@ -1,5 +1,3 @@
-$img: '../img/';
-
 ul { list-style-type: none; }
 
 .clearfix:after {
@@ -57,98 +55,30 @@ header {
 }
 
 section.middle {
-    margin-top: -290px;
-    #menu {
-        position: absolute;
-        right: 0;
+  margin-top: -290px;
+  .frame {
+  	margin: 0 auto;
+    padding: {
+      top: 250px;
+      bottom: 102px;
     }
-    .frame {
-        display: none;
-        margin: 0 auto;
-        padding: {
-            top: 250px;
-            bottom: 102px;
-        }
-        width: 990px;
-        position: relative;
-        background: {
-            position: top, bottom;
-            size: 100%;
-            repeat: no-repeat;
-        }
-        &.header-empty {
-            padding-top: 102px;
-        }
-        &.seminar {
-            display: block;
-            background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
-            margin-bottom: -170px;
-            p {
-                margin: 0;
-                padding: 10px 30px 0 30px;
-                text-align: justify;
-                text-indent: 40px;
-            }
-        }
-        .middle {
-            padding: 0 70px;
-            background: url($img + 'frame/middle.png') repeat 100%;
-            .content {
-                position: relative;
-                #title {
-                    padding-bottom: 10px;
-                    text-align: center;
-                    font: {
-                        size: 25px;
-                        weight: bold;
-                    }
-                    color: #4421FA;
-                }
-                #imgs {
-                    .img {
-                        box-sizing: border-box;
-                        margin: 15px;
-                        margin-bottom: 10px;
-                        border: 5px solid white;
-                        box-shadow: 0 0 4px #444;
-                    }
-                }
-            }
-        }
+    width: 990px;
+    position: relative;
+    background: {
+      position: top, bottom;
+      size: 100%;
+      repeat: no-repeat;
     }
-    #past-list {
-        list-style-type: none;
-        margin: 0 auto;
-        padding: 0;
-        width: 980px;
-        .concert {
-            display: block;
-            height: 80px;
-            cursor: pointer;
-            background-repeat: no-repeat;
-        }
+    .middle {
+      padding: 0 70px;
+      background: url($img + 'frame/middle.png') repeat 100%;
     }
+  }
 }
 
 footer {
     height: 460px;
     position: relative;
-    .calendar {
-        margin: 0 auto;
-        width: 765px;
-        height: 380px;
-        position: relative;
-        top: -10px;
-        background: url($img + 'footer/calendar.png') 50% no-repeat;
-        z-index: 1;
-        a {
-          display: block;
-          position: absolute;
-          bottom: 0;
-          width: 100%;
-          height: 168px;
-        }
-    }
     .hover {
         position: absolute;
         bottom: 0;

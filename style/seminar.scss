@@ -1,0 +1,32 @@
+$img: '../img/';
+
+@import '_common';
+
+section.middle {
+  #menu {
+    position: absolute;
+    right: 0;
+  }
+  .frame {
+    display: block;
+    margin-bottom: -170px;
+    background-image: url($img + 'frame/seminar.png'), url($img + 'frame/footer.png');
+    .middle {
+    	article.content {
+    		&#index {
+    			p {
+		        margin: 0;
+		        padding: 10px 30px 0 30px;
+		        text-align: justify;
+		        text-indent: 40px;
+		    	}
+    		}
+	    	&#form {
+	    		iframe {
+	    			width: 100%;
+	    		}
+	    	}
+    	}
+    }
+  }
+}

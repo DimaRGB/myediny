@@ -24,4 +24,3 @@ setup coffeescript build:
 		,   "compileDir": "compiled"
 		,   "compilePaths": false
 		}
-

@@ -1,0 +1,64 @@
+$img: '../img/';
+
+@import '_common';
+
+section.middle {
+    .frame {
+        display: none;
+        &.header-empty {
+            padding-top: 102px;
+        }
+        .middle {
+            .content {
+                position: relative;
+                #title {
+                  padding-bottom: 10px;
+                  text-align: center;
+                  font: {
+                    size: 25px;
+                    weight: bold;
+                  }
+                  color: #4421FA;
+                }
+                #imgs {
+                  .img {
+                    box-sizing: border-box;
+                    margin: 15px;
+                    margin-bottom: 10px;
+                    border: 5px solid white;
+                    box-shadow: 0 0 4px #444;
+                  }
+                }
+            }
+        }
+    }
+    #past-list {
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+        width: 980px;
+        .concert {
+            display: block;
+            height: 80px;
+            cursor: pointer;
+            background-repeat: no-repeat;
+        }
+    }
+}
+
+footer .calendar {
+    margin: 0 auto;
+    width: 765px;
+    height: 380px;
+    position: relative;
+    top: -10px;
+    background: url($img + 'footer/calendar.png') 50% no-repeat;
+    z-index: 1;
+    a {
+      display: block;
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 168px;
+    }
+}
