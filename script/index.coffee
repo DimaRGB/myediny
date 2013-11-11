@@ -28,8 +28,8 @@
 		$frame = $ 'section.middle .frame'
 		$frame.css 'background-image', "url('" + headerPath + "'), url('" + imgPath + "frame/footer.png')"
 		$frame.toggleClass 'header-empty', !headerExists
-		$frame.find('#title').text(cityTitle);
-		$frame.show()
+		$frame.find('#title').text cityTitle
+		$frame.css 'display', 'block'
 		$(document).scrollTop $frame.position().top - 8
 		setupImgs imgs
 
